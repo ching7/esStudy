@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 新增对象操作
+        const person = {
+            name: 'jack',
+            age: 21,
+            language: ['java', 'js', 'css']
+        }
+        // ["name", "age", "language"]
+        console.log(Object.keys(person))
+        // ["jack", 21, Array(3)] 
+        console.log(Object.values(person))
+        //[Array(2), Array(2), Array(2)] 每一个array是key-value键值对
+        console.log(Object.entries(person))
+
+
+        //assign 对象合并
+        const target = { a: 1 }
+        const source1 = { b: 2 }
+        const source2 = { c: 3 }
+        Object.assign(target, source1, source2)
+        console.log(target)
+
+        //声明对象简写方式
+        const age = 23
+        const name = 'zhangsan'
+        const person2 = { age, name }
+        console.log(person2)
+
+        //对象属性简写
+        let person3 = {
+            name: 'rose',
+            eat: function (food) {
+                console.log(this.name + " eat " + food)
+            },
+            // 箭头函数无法获取this
+            eat2: food => console.log(this.name + " eat " + food),
+            eat3(food) {
+                console.log(this.name + " eat " + food)
+            }
+        }
+        person3.eat('apple')
+        person3.eat2('banana')
+        person3.eat3('grape')
+
+        //对象拓展运算符
+        // 1.对象深copy
+        let p1 = { name: 'amy', age: 15 }
+        let someone = { ...p1 }
+        console.log(someone)
+
+        // 2.合并对象
+        let age1 = { age: 15 }
+        let name1 = { name: 'tim' }
+        let p2 = { name: 'shangsan' }
+        p2 = { ...age1, ...name1 }
+        console.log(p2)
+    </script>
+</body>
+
+</html>

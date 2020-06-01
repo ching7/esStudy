@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 给函数参数设置默认值
+        function add(a, b) {
+            b = b || 1
+            return a + b
+        }
+        console.log(add(10))
+        //es6
+        function add2(a, b = 1) {
+            return a + b
+        }
+        console.log(add2(20))
+
+        //不定参数
+        function fun(...values) {
+            console.log(values.length)
+        }
+        fun(1, 2)
+        fun(1, 2, 3, 4, 5)
+
+        //箭头函数
+        let print = obj => console.log(obj)
+        print('hello')
+        let sum2 = (a, b) => a + b;
+        console.log(sum2(11, 22))
+
+        //解构函数加对象优化
+        const person = {
+            name: 'jack',
+            age: 21,
+            language: ['java', 'js', 'css']
+        }
+        let getPerson = ({name}) => console.log(name)
+        getPerson(person)
+    </script>
+</body>
+
+</html>
