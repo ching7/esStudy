@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组解构
+        let arr = [1, 2, 3]
+        // let a = arr[0]
+        // let b = arr[1]
+        // let c = arr[2]
+        // console.log(a+b+c)
+        // let [a, b, c] = arr
+        // console.log(a, b, c)
+
+        //对象解构
+        const person = {
+            name: 'jack',
+            age: 21,
+            language: ['java', 'js', 'css']
+        }
+        // const name = person.name
+        // const age = person.age
+        // const language = person.language
+        // console.log(name, age, language)
+        const { name:abc, age, language } = person
+        console.log(abc, age, language)
+    </script>
+</body>
+
+</html>

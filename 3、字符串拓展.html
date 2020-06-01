@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串拓展
+        // 更快捷的字符串查找
+        let str = 'hello.vue'
+        console.log(str.startsWith('hello'))
+        console.log(str.endsWith('vue'))
+        console.log(str.includes('vue'))
+        console.log(str.includes('o'))
+
+        // 字符串模板
+        // 较长的，多行的字符串，保留格式的使用 `` 括起来
+        let langStr = `console.log(str.endsWith('vue'))
+        console.log(str.includes('vue'))
+        console.log(str.includes('o'))`
+        console.log(langStr)
+
+        // 字符串插值，插入变量和表达式 ${ },其中可以方式javascript表达式
+        function fun(){
+            return '我是函数'
+        }
+        let info = `我是 ${str} 和 ${langStr} 和 ${fun()}`
+        console.log(info)
+    </script>
+</body>
+</html>
