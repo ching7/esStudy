@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<script>
+  //模拟常规异步
+  $.ajax({
+    url: 'mock/user.json',
+    success(data) {
+      console.log("查询用户：", data)
+      $.ajax({
+        url: `mock/user_course_${data.id}.json`,
+        success(data) {
+          console.log('查询课程：', data)
+          $.ajax({
+            url: `mock/course_score_${data.id}.json`,
+            success(data) {
+              console.log('查询成绩：', data)
+            },
+            error(data) {
+
+            }
+          })
+        },
+        error(error) {}
+      })
+    },
+    error(error) {
+
+    }
+  })
+</script>
+
+<body>
+
+</body>
+
+</html>

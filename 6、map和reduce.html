@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <script>
-        // 数组中新增了map和reduce方法
-        // map():接受一个函数，将原数组中对所有元素用这个函数处理后放入新数组中返回
-        
-    </script>
+  <script>
+    // 数组中新增了map和reduce方法
+    // map():接受一个函数，将原数组中对所有元素用这个函数处理后放入新数组中返回
+    let arr = ['1', '2', '3', '4', '5']
+    // arr = arr.map((item) => {
+    //     return item * 2
+    // })
+    arr = arr.map(item => item * 3)
+    console.log(arr)
+
+    //reduce() 为数组中的每一个元素依次执行回调函数，不包括数组中被删除或从未被赋值的元素
+    //reduce(callbackfn,[initvalue])
+    // callbackfn:(previousValue: string, currentValue: string, currentIndex: number, array: string[])
+    // 1、previousValue 上一次调用回调返回的值，或者是提供的初始值
+    // 2、currentValue 当前数组正在处理的元素
+    // 3、index当前元素的下标
+    // 4、array 调用的reduce数组
+    let res = arr.reduce((a, b) => {
+      console.log("previous value " + a)
+      console.log("current value " + b)
+      return a + b
+    }, 100)
+    // 100 为初始值
+    console.log(res)
+  </script>
 </body>
+
 </html>
