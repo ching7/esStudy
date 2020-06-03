@@ -3,4 +3,8 @@
 // 主要两个命令构成
 // `export`命令用于规定模块对外接口
 // `import`命令用于导入其他模块提供对功能
-main.js
+import util from './hello.js'
+import { name, add } from './user.js'
+
+console.log(util.sum(1, 2))
+console.log(name)
